@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Magecian_Groupdeals::parent" title="Buybble" module="Magecian_Groupdeals" sortOrder="50" resource="Magecian_Groupdeals::parent"/>
+        <add id="Magecian_Groupdeals::newdeal" title="New Deal" module="Magecian_Groupdeals" sortOrder="10" action="magecian_groupdeals/deal/newdeal" parent="Magecian_Groupdeals::parent" resource="Magecian_Groupdeals::newdeal"/>
+        <add id="Magecian_Groupdeals::deals" title="Deals" module="Magecian_Groupdeals" sortOrder="10"  resource="Magecian_Groupdeals::deals" parent="Magecian_Groupdeals::parent"/>
+        <add id="Magecian_Groupdeals::activedeals" title="Active Deals" module="Magecian_Groupdeals" sortOrder="10" action="magecian_groupdeals/deal/activedeals" parent="Magecian_Groupdeals::parent" resource="Magecian_Groupdeals::activedeals"/>
+        <add id="Magecian_Groupdeals::successdeals" title="Current Succeed Deals" module="Magecian_Groupdeals" sortOrder="10" action="magecian_groupdeals/deal/successdeals" parent="Magecian_Groupdeals::parent" resource="Magecian_Groupdeals::filterdeals"/>
+        <add id="Magecian_Groupdeals::pendingdeals" title="Pending Deals" module="Magecian_Groupdeals" sortOrder="10" action="magecian_groupdeals/deal/pendingdeals" parent="Magecian_Groupdeals::parent" resource="Magecian_Groupdeals::pendingdeals"/>
+        <!--add id="Magecian_Groupdeals::alldeals" title="All Deals" module="Magecian_Groupdeals" sortOrder="10" action="groupdeals/alldeals" parent="Magecian_Groupdeals::parent" resource="Magecian_Groupdeals::alldeals"/-->
+        <add id="Magecian_Groupdeals::Order" title="Order" module="Magecian_Groupdeals" sortOrder="10"  resource="Magecian_Groupdeals::order" parent="Magecian_Groupdeals::parent"/>
+        <add id="Magecian_Groupdeals::orderdetails" title="Order Details" module="Magecian_Groupdeals" sortOrder="10" action="magecian_groupdeals/deal/orderdetails" parent="Magecian_Groupdeals::parent" resource="Magecian_Groupdeals::orderdetails"/>
+
+        <add id="Magecian_Groupdeals::setting" title="Setting" module="Magecian_Groupdeals" sortOrder="10"  resource="Magecian_Groupdeals::setting" parent="Magecian_Groupdeals::parent"/>
+        <add id="Magecian_Groupdeals::settings" title="Settings" module="Magecian_Groupdeals" sortOrder="10" action="adminhtml/system_config/edit/section/buybble_config" parent="Magecian_Groupdeals::parent" resource="Magecian_Groupdeals::settings"/>
+    </menu>
+</config>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+       <template id="buybble_config_notify_admin_deal_succeed_template" label="admin success template" file="admin_success.html" type="html" module="Magecian_Groupdeals" area="frontend"/>
+       <template id="buybble_config_notify_customer_deal_succeed_template" label="customer success template" file="customer_success.html" type="html" module="Magecian_Groupdeals" area="frontend"/>
+       <template id="buybble_config_notify_admin_deal_failed_template" label="admin failed template" file="admin_failed.html" type="html" module="Magecian_Groupdeals" area="frontend"/>
+       <template id="buybble_config_notify_customer_deal_failed_template" label="customer failed template" file="customer_failed.html" type="html" module="Magecian_Groupdeals" area="frontend"/>
+       <template id="buybble_config_notify_deal_expired_template" label="deal expired template" file="deal_expired.html" type="html" module="Magecian_Groupdeals" area="frontend"/>
+</config>

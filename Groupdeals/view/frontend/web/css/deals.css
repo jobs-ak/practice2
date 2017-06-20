@@ -1,0 +1,22 @@
+p.groupdeal_cat_count_clock {
+   float: left;
+    width: 26%;
+    margin-left: 10px;
+}
+span.gsave-box {
+  padding: 10px;
+}
+
+span.gprice-box {
+    
+}
+
+span.gvalue-box {
+    
+}
+.progress-bar {
+    background: #ffc400;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bolder;
+}

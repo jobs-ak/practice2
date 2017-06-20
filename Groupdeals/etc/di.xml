@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+   <virtualType name="Magecian\Groupdeals\Model\ResourceModel\Deal\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">groupdeals_deal</argument>
+            <argument name="eventPrefix" xsi:type="string">magecian_groupdeals_model_deal_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">deal_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Magecian\Groupdeals\Model\ResourceModel\Deal</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="deal_listing_data_source" xsi:type="string">Magecian\Groupdeals\Model\ResourceModel\Deal\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

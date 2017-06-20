@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magecian\Groupdeals\Block\Adminhtml\Deal\Edit" name="magecian_groupdeals_deal_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Magecian\Groupdeals\Block\Adminhtml\Deal\Edit\Tabs" name="magecian_groupdeals_edit_tabs">
+                <block class="Magecian\Groupdeals\Block\Adminhtml\Deal\Edit\Tab\Main" name="magecian_groupdeals_edit_tab_main"/>
+                  <block class="Magecian\Groupdeals\Block\Adminhtml\Deal\Edit\Tab\Details" name="magecian_groupdeals_edit_tab_details"/>
+              <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">magecian_groupdeals_edit_tab_main</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">details</argument>
+                    <argument name="block" xsi:type="string">magecian_groupdeals_edit_tab_details</argument>
+                </action>
+                <!--action method="addTab">
+                    <argument name="name" xsi:type="string">coupons</argument>
+                    <argument name="block" xsi:type="string">magecian_groupdeals_edit_tab_main</argument>
+                </action-->
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">orders</argument>
+                    <argument name="block" xsi:type="array">
+                        <item name="label" xsi:type="string">Orders</item>
+                        <item name="title" xsi:type="string">Orders</item>
+                        <item name="url" xsi:type="helper" helper="Magecian\Groupdeals\Helper\Data::getOrdersGridUrl"></item>
+                        <item name="class" xsi:type="string">ajax</item>
+                    </argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">information</argument>
+                    <argument name="block" xsi:type="array">
+                        <item name="label" xsi:type="string">Information</item>
+                        <item name="title" xsi:type="string">Information</item>
+                        <!--item name="url" xsi:type="helper" helper="Magecian\Groupdeals\Helper\Data::getProductsGridUrl"></item>
+                        <item name="class" xsi:type="string">ajax</item-->
+                    </argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

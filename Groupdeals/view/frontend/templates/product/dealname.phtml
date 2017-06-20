@@ -1,0 +1,11 @@
+
+<?php 
+$currentProduct =   $this->getCurrentProduct();
+$currentProductId = $currentProduct->getId();
+$contain = $this->getdealName($currentProductId);
+if(count($contain) != 0):
+?>
+<h1 class="page-title-new">
+<span class="base" data-ui-id="page-title-wrapper" itemprop="name"><?php echo $contain ?></span>    
+</h1>
+<?php endif;?>

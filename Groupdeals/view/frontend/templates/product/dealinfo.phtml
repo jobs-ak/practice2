@@ -1,0 +1,40 @@
+
+<?php 
+$currentProduct =   $this->getCurrentProduct();
+$currentProductId = $currentProduct->getId();
+$container = $this->dealCollection($currentProductId);
+if(count($container) != 0):
+foreach ($container as $value):
+      $id= $value['id'];
+      $Avafrom= $value['available_from'];
+      $AvaTo = $value['available_to'];
+      $ProductId = $value['product_id'];
+      $Price = $value['price'];
+      $QtyDeal = $value['qty_to_reach_deal'];
+      $closed = $value['close_state'];
+
+$now = new DateTime();
+$Afrom =  $now->format('Y-m-d H:i:s');
+$this->dataHelper->getDealclosed($id,$ProductId,$Afrom,$AvaTo);
+?>
+<?php if($closed == 0):?>
+<div id="deals" class="group-deals" style="line-height: 20px;">
+        <span style="text-transform: uppercase;font-size: 12px;margin-left:5px;"><b><?php if($value['purchases_left'] == ''){ echo $value['purchases_left'] = 0 ;}else{ echo $value['purchases_left']; } ?>  bought</b></span><span style="margin-left: 35px;font-size: 12px;"><?php echo $QtyDeal-$value['purchases_left']." more needed to get the deal" ?>  <span>  
+      <div class="progress" style="width: 75%;">
+<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $value['purchases_left'] ?>" aria-valuemin="0" aria-valuemax="<?php echo $QtyDeal ?>" style="width: <?php echo $value['purchases_left'] ?>%">
+     <div class="groupdeal_cat_count_clock">
+			<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+      <span id="days"></span> <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+	</div>
+     </div>
+</div>
+<input id="avato" type="hidden" value="<?php echo $AvaTo ?>">
+<input id="avafrom" type="hidden" value="<?php echo $Afrom ?>">
+</div>
+
+<?php endif;endforeach; ?>
+
+<script type = "text/javascript">
+
+</script>
+<?php endif; ?>

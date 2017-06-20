@@ -1,0 +1,82 @@
+<?php
+/**
+ 
+ */
+?>
+<div class="buybble-deals-container">
+   <div class="buybble-navigation">
+    
+    <ul>
+    <li><a href="http://localhost/magento-sample/deals/featured.html">Featured deal</a></li>
+    <li class="buybble-current"><a href="http://localhost/magento-sample/deals/active.html">Active deals</a></li>
+    </ul>
+     
+    <div class="clearer"></div>
+    </div>
+            
+    <div class="pager pager-no-toolbar">
+      <div class="count-container">
+         <p class="amount amount--no-pages">
+         <strong>1 Item(s)</strong>
+         </p>
+                    
+     <div class="limiter">
+       <label>Show</label>
+            <select onchange="setLocation(this.value)" title="Results per page">
+                <option value="http://localhost/magento-sample/deals/index/list/section/active/?dealslimitactive=10" selected="selected">10</option>
+                 <option value="http://localhost/magento-sample/deals/index/list/section/active/?dealslimitactive=15">
+                  15</option>
+                  <option value="http://localhost/magento-sample/deals/index/list/section/active/?dealslimitactive=25">
+                   25</option>
+             </select>
+        </div>
+            </div>
+        </div>
+    
+    <div>
+         <ul class="buybble-category-grid">
+         <li class="buybble-item first">
+            <a class="buybble-product-image" href="http://localhost/magento-sample/deals/demo.html"><img src="http://localhost/magento-sample/media\aw_collpur\deals\cache\catalog\0Z1A9.png" alt="awesome deal"></a>
+            <div class="buybble-mark-left"><div class="buybble-mark-right"><div class="buybble-mark-center">             <div class="buybble-details inprogress">
+             <h2 class="buybble-title"><a href="http://localhost/magento-sample/deals/demo.html">awesome deal</a></h2>
+              <div class="buybble-date" id="buybble_timer_9191">5 days 0:04</div>
+                            
+                <script type="text/javascript">
+                                    document.observe("dom:loaded", function() {
+                                       new buybbleCollpur("{\n           \"dateNow\":1495782870,\n           \"dateTo\":1496215188,\n           \"translation\":  {\n                \"day\":\"day\",\n                \"days\":\"days\",\n                \"hour\":\"hour\",\n                \"hours\":\"hours\",\n                \"minute\":\"minute\",\n                \"minutes\":\"minutes\",\n                \"second\":\"seconds\",\n                \"seconds\":\"seconds\"}\n        }","buybble_timer_9191");
+                                    });
+                                </script>
+                <button class="button buybble-button" onclick="setLocation('http://localhost/magento-sample/deals/demo.html')"><span><span>View This Deal!</span></span></button>
+                <div class="clearer"></div>
+                </div>
+                </div></div></div>
+             </li>
+            </ul>
+         <div class="clearer"></div>
+    </div>
+    <div class="pager pager-no-toolbar">
+    
+    <div class="count-container">
+        <p class="amount amount--no-pages">
+        <strong>1 Item(s)</strong>
+        </p>
+                    
+        <div class="limiter">
+        <label>Show</label>
+        <select onchange="setLocation(this.value)" title="Results per page">
+        <option value="http://localhost/magento-sample/deals/index/list/section/active/?dealslimitactive=10" selected="selected">
+        10</option>
+        <option value="http://localhost/magento-sample/deals/index/list/section/active/?dealslimitactive=15">
+        15</option>
+        <option value="http://localhost/magento-sample/deals/index/list/section/active/?dealslimitactive=25">
+        25</option>
+        </select>
+        </div>
+            </div>
+     </div>
+    
+     <!-- Incorrect view of buttons in catalog -->
+     <style>
+      button.button span span {height:auto!important;}
+     </style>
+</div>
