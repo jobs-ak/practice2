@@ -32,7 +32,10 @@ $this->dataHelper->getDealclosed($id,$ProductId,$Afrom,$AvaTo);
 <input id="avafrom" type="hidden" value="<?php echo $Afrom ?>">
 </div>
 
-<?php endif;endforeach; ?>
+<?php else: ?>
+
+<?php $this->dataHelper->getRemoveSpecialPrice($currentProductId); ?>
+<?php endif; endforeach; ?>
 
 <script type = "text/javascript">
 

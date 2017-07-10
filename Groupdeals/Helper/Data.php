@@ -94,8 +94,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
  
   
     public function getDealclosed($Id,$ProductId,$Afrom,$AvaTo){
-        $date1 =  $this->_date->date($Afrom)->format('Y-m-d H:i:s');
-        $date2 =  $AvaTo;
+      
+      $date1 =  $this->_date->date($Afrom)->format('Y-m-d H:i:s');
+      $date2 =  $AvaTo;
        
        $seconds = strtotime($date2) - strtotime($date1);
        $days    = floor($seconds / 86400);
@@ -129,6 +130,20 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
       endif;
       return true;
     }
+
+ 
+     public function getRemoveSpecialPrice($ProductId){
+ 
+      $_product = $objectManager->create('\Magento\Catalog\Model\Product');
+      $_product->load($ProductId); 
+      $_product->setDealStatus(0);
+      $_product->setSpecialPrice(null);
+      $_product->getResource()->saveAttribute($_product, 'special_price');          
+      $_product->save();
+
+     } 
+
+
      public function getDealcheck($dealId,$ProductId){
       $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
       $model = $objectManager->create('Magecian\Groupdeals\Model\Deal');

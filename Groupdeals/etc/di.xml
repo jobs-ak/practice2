@@ -8,10 +8,19 @@
             <argument name="resourceModel" xsi:type="string">Magecian\Groupdeals\Model\ResourceModel\Deal</argument>
         </arguments>
     </virtualType>
+     <virtualType name="Magecian\Groupdeals\Model\ResourceModel\Order\Grid\Collection">
+         <arguments>
+            <argument name="mainTable" xsi:type="string">groupdeals_dealpurchases</argument>
+            <argument name="eventPrefix" xsi:type="string">magecian_groupdeals_model_order_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">order_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Magecian\Groupdeals\Model\ResourceModel\Order</argument>
+        </arguments>
+    </virtualType>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
                 <item name="deal_listing_data_source" xsi:type="string">Magecian\Groupdeals\Model\ResourceModel\Deal\Grid\Collection</item>
+                 <item name="order_listing_data_source" xsi:type="string">Magecian\Groupdeals\Model\ResourceModel\Order\Grid\Collection</item>
             </argument>
         </arguments>
     </type>

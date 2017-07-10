@@ -384,7 +384,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
                 )
                 ->addColumn(
                     'order_id',
-                    \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+                    \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                     10,
                      ['nullable' => false],
                     'Order ID'
@@ -418,6 +418,13 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
                     'Customer Name'
                 )
                ->addColumn(
+                    'customer_email',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                    255,
+                    ['nullable' => false],
+                    'Customer Email'
+                )
+                 ->addColumn(
                     'customer_id',
                     \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
                     10,
@@ -442,15 +449,24 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
                     'Shipping Amount'
                 )
                ->addColumn(
-                    'qty_ordered',
+                    'status',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                    12,
+                    [
+                      'nullable' => false,
+                    ],
+                    'Order Status'
+                )
+                ->addColumn(
+                    'subtotal_incl_tax',
                     \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
                     12,
                     [
                       'nullable' => false,
-                      'default'=> 0.00,
+                      'default'=>  0,
                     ],
-                    'Qty Ordered'
-                )
+                    'subtotal_incl_tax'
+                    )
                ->addColumn(
                     'refund_state',
                     \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,

@@ -6,7 +6,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     /**
      * @var string
      */
-    protected $_idFieldName = 'deal_id';
+    protected $_idFieldName = 'id';
 
     /**
      * Define resource model
@@ -15,6 +15,6 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     protected function _construct()
     {
-        $this->_init('Magecian\Groupdeals\Model\Order', 'Magecian\Groupdeals\Model\ResourceModel\Order');
+        $this->_init('Magecian\Groupdeals\Model\Orderdetails', 'Magecian\Groupdeals\Model\ResourceModel\Order');
     }
 }

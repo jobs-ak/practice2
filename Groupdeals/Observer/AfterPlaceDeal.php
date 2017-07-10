@@ -34,7 +34,7 @@ class AfterPlaceDeal implements ObserverInterface
     {  
        $orderId = $observer->getEvent()->getOrderIds();
        $order = $this->order->load($orderId);
-       print_r();
+       //print_r($order->getData());die;
        $quote = $this->_cartModel->getQuote()->load($order->getQuoteId());
        $cartAllItems = $quote->getAllItems(); 
        foreach ($cartAllItems as $items) {
@@ -51,6 +51,9 @@ class AfterPlaceDeal implements ObserverInterface
        $dealorder->setData('qty_purchased',$ProQty);
        $dealorder->setData('shipping_amount',$order->getShippingAmount());
        $dealorder->setData('purchase_date_time',$order->getCreatedAt());
+       $dealorder->setData('subtotal_incl_tax',$order->getSubtotalInclTax());
+       $dealorder->setData('customer_email',$order->getCustomerEmail());
+       $dealorder->setData('status',$order->getStatus());
        $dealorder->save();
        $this->dataHelper->getUpdateDealQty($ProOrder,$ProQty);
        endif;
