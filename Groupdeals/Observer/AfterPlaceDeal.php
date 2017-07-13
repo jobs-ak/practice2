@@ -46,6 +46,7 @@ class AfterPlaceDeal implements ObserverInterface
        $dealorder = $objectManager->create('Magecian\Groupdeals\Model\Order');
        //print_r($orderId[0]);die;
        $dealorder->setData('deal_id',$ProOrder);
+       $dealorder->setData('increment_id',$order->getIncrementId());
        $dealorder->setData('order_id',$order->getIncrementId());
        $dealorder->setData('order_item_id',$ProOrder);
        $dealorder->setData('qty_purchased',$ProQty);

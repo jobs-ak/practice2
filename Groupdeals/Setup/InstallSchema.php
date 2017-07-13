@@ -384,10 +384,17 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
                 )
                 ->addColumn(
                     'order_id',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+                    11,
+                     ['nullable' => false],
+                    'Order ID'
+                )
+                ->addColumn(
+                    'increment_id',
                     \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                     10,
                      ['nullable' => false],
-                    'Order ID'
+                    'Increment ID'
                 )
                 ->addColumn(
                     'order_item_id',
